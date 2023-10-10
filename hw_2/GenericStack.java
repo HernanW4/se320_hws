@@ -3,7 +3,7 @@ public class GenericStack<E> {
     private Object[] array;
     private int size;
 
-    // Default size of 16, why? Because I like Hexadecimals
+    // Default length of 16, why? Because I like Hexadecimals
     private static final int DEFAULT_SIZE = 16;
 
     public GenericStack() {
@@ -11,7 +11,7 @@ public class GenericStack<E> {
         this.size = 0;
     }
 
-    // Constructor with size
+    // Constructor with length of array
     public GenericStack(Integer length) {
         this.array = new Object[length];
         this.size = 0;
@@ -26,7 +26,7 @@ public class GenericStack<E> {
     public void push(E item) {
         // Check size of array
         if (size == array.length) {
-            // Double size of old array
+            // Double length of array
             int newLength = array.length * 2;
 
             Object[] newList = new Object[newLength];
