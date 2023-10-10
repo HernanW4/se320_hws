@@ -3,7 +3,7 @@ public class GenericStack<E> {
     private Object[] array;
     private int size;
 
-    // Default size of 16, why? Because Hexadecimals
+    // Default size of 16, why? Because I like Hexadecimals
     private static final int DEFAULT_SIZE = 16;
 
     public GenericStack() {
@@ -18,28 +18,31 @@ public class GenericStack<E> {
     }
 
     public int getSize() {
-        return this.array.length;
+        return size;
     }
 
-    public void push(E object) {
+
+    // Add item to stack
+    public void push(E item) {
         // Check size of array
-        if (size == this.getSize()) {
+        if (size == array.length) {
             // Double size of old array
             int newLength = array.length * 2;
 
             Object[] newList = new Object[newLength];
-            System.arraycopy(this.array, 0, newList, 0, this.size);
+            System.arraycopy(array, 0, newList, 0, size);
 
-            this.array = newList;
+            array = newList;
         }
 
-        this.array[this.size++] = object;
+        this.array[size++] = item;
     }
 
+    // Removes and returns last item in stack(Top item)
     public Object pop() {
         Object item = new Object();
         try {
-            item = this.array[--size];
+            item = array[--size];
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Stack is empty");
         }
@@ -47,20 +50,38 @@ public class GenericStack<E> {
     }
 
     public boolean isEmpty() {
-        if (this.size > 0) {
+        if (size > 0) {
             return false;
         }
         return true;
     }
 
+    // See top item of the stack without removing
+    public Object peek(){
+        Object item = new Object();
+        try {
+            item = array[size - 1];
+        }catch (IndexOutOfBoundsException e) {
+            System.out.println("Stack is empty");
+        }
+        return item;
+    }
+
+
     public static void main(String[] args) {
         GenericStack<Integer> stack = new GenericStack<>(3);
 
         stack.push(1);
-        stack.push(2);
-        stack.push(3);
 
-        System.out.println(stack.isEmpty());
+        System.out.println(stack.pop());
+
+
+        System.out.println(stack.peek());
+
+        stack.push(1);
+
+        System.out.println(stack.pop());
+
 
     }
 
