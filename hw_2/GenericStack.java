@@ -68,21 +68,21 @@ public class GenericStack<E> {
     }
 
 
-    public static void main(String[] args) {
-        GenericStack<Integer> stack = new GenericStack<>(3);
+    //public static void main(String[] args) {
+    //    GenericStack<Integer> stack = new GenericStack<>(3);
 
-        stack.push(1);
+    //    stack.push(1);
 
-        System.out.println(stack.pop());
-
-
-        System.out.println(stack.peek());
-
-        stack.push(1);
-
-        System.out.println(stack.pop());
+    //    System.out.println(stack.pop());
 
 
-    }
+    //    System.out.println(stack.peek());
+
+    //    stack.push(1);
+
+    //    System.out.println(stack.pop());
+
+
+    //}
 
 }
