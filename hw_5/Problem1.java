@@ -20,7 +20,7 @@ public class Problem1{
 
         int daysPassed = today.daysFrom(myBday);
 
-        System.out.println(daysPassed);
+        System.out.println("Days since my Bday"+daysPassed);
 
     
 
