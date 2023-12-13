@@ -1,7 +1,5 @@
 import java.io.*;
 import java.net.*;
-import java.util.*;
-import java.awt.*;
 
 public class Server {
 
@@ -19,7 +17,7 @@ public class Server {
                     socket.getOutputStream());
 
             while (true) {
-                //Get the needed stuff 
+                // Get the needed stuff
                 double weight = incoming.readDouble();
 
                 double height = incoming.readDouble();
